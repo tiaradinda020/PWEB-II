@@ -112,3 +112,15 @@ metode abstrak tanpa implementasi. Kelas yang mewarisi Pengguna harus menyediaka
 
 ## OUTPUT Membuat Object dan Class
 ![object](https://github.com/user-attachments/assets/8b9382e4-8ab9-4d56-acdf-695df321c6cb)
+
+## OUTPUT Membuat Encapsulation
+![encapsulation](https://github.com/user-attachments/assets/acd47397-703c-4771-85d6-c91f8733c967)
+
+## OUTPUT Membuat Inheritance
+![inheritance](https://github.com/user-attachments/assets/405c99d2-eb3f-4bf6-bab1-396b91d93129)
+
+## OUTPUT Membuat Polymorphism
+![polymor](https://github.com/user-attachments/assets/66f0f150-3415-480a-93e8-5262c95e230d)
+
+## OUTPUT Membuat Abstraction
+![abstraction](https://github.com/user-attachments/assets/6acfbfbc-bbc1-4d68-a2a4-654bd8eaff09)
