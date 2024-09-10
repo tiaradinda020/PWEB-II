@@ -1,7 +1,9 @@
 # Tentang Saya 👋
 
 **Nama:** Tiara Dinda Arumningtyas 
-**Kelas:** TI-2B  
+
+**Kelas:** TI-2B
+
 **NIM:** 230102045 
 
 ## Daftar Isi
