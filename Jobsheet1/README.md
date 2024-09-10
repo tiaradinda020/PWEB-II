@@ -3,10 +3,7 @@
 Object-Oriented Programming (OOP) adalah pemrograman yang
 berfokus pada konsep objek.
 
-### Konsep Dasar OOP
-- Encapsulation: Menyembunyikan detail implementasi dan hanya memberikan
-akses melalui metode tertentu.
-### Kelas (Class) 
+### Kelas (Class)
 
 Class adalah template untuk  menyimpan objek
 Object: Instance dari class yang memiliki atribut (properties) dan perilaku
@@ -64,7 +61,6 @@ echo $mahasiswa->getJurusan() . "<br>"; // Output: Teknik Informatika
 ```
 Data diakses menggunakan metode getter dan ditampilkan menggunakan echo.
 
-- Inheritance: Kelas dapat mewarisi properti dan metode dari kelas lain.
   ### Protected
   ```bash
   protected $nama;
@@ -81,34 +77,43 @@ Data diakses menggunakan metode getter dan ditampilkan menggunakan echo.
   ```
   Dosen mewarisi properti dan metode Pengguna (termasuk properti protected seperti $nama dan metode public seperti getNama().
 
+<h2> KONSEP PHP OOP</h2>
+
+## Encapsulation
+Menyembunyikan detail implementasi dan hanya memberikan
+akses melalui metode tertentu.
+
+  ## Inheritance
+Kelas dapat mewarisi properti dan metode dari kelas lain.
   
-  
-- Polymorphism: Metode yang sama dapat memiliki implementasi berbeda
-dalam class yang berbeda.
+## Polymorphism
+Metode yang sama dapat memiliki implementasi berbeda
+    dalam class yang berbeda.
+    
+    ```bash
+    public function aksesFitur() {
+            return "Mahasiswa $this->nama dapat mengakses fitur absen dan tugas";
+        }
+    ```
+    Metode ini merupakan kelas turunan dari kelas Pengguna, dan mereka mengimplementasikan ulang metode dengan fungsi yang berbeda.
 
-```bash
-public function aksesFitur() {
-        return "Mahasiswa $this->nama dapat mengakses fitur absen dan tugas";
-    }
-```
-Metode ini merupakan kelas turunan dari kelas Pengguna, dan mereka mengimplementasikan ulang metode dengan fungsi yang berbeda.
-
-- Abstraction: Menyembunyikan detail implementasi dan hanya menampilkan
-fungsi penting.
-
-### Abstract Class Pengguna 
+## Abstraction
+Menyembunyikan detail implementasi dan hanya menampilkan
+    fungsi penting.
+    
+    ### Abstract Class Pengguna 
 mendefinisikan kelas abstrak yang tidak dapat diinstansiasi secara langsung.
-
-```bash
-abstract class Pengguna {
-protected $nama;
-```
+    
+    ```bash
+    abstract class Pengguna {
+    protected $nama;
+    ```
 Kelas Pengguna adalah kelas abstrak yang tidak dapat diinstansiasi langsung. Kelas ini dirancang untuk menjadi superclass dari kelas lain yang akan mengimplementasikan fungsionalitas lebih lanjut.
 
-```bash
- abstract public function aksesFitur();
-```
-metode abstrak tanpa implementasi. Kelas yang mewarisi Pengguna harus menyediakan implementasi untuk metode ini.
+    ```bash
+     abstract public function aksesFitur();
+    ```
+ metode abstrak tanpa implementasi. Kelas yang mewarisi Pengguna harus menyediakan implementasi untuk metode ini.
 
 ## OUTPUT Membuat Object dan Class
 ![object](https://github.com/user-attachments/assets/8b9382e4-8ab9-4d56-acdf-695df321c6cb)
