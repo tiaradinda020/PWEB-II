@@ -111,3 +111,4 @@ Kelas Pengguna adalah kelas abstrak yang tidak dapat diinstansiasi langsung. Kel
 metode abstrak tanpa implementasi. Kelas yang mewarisi Pengguna harus menyediakan implementasi untuk metode ini.
 
 ## OUTPUT Membuat Object dan Class
+![object](https://github.com/user-attachments/assets/8b9382e4-8ab9-4d56-acdf-695df321c6cb)
