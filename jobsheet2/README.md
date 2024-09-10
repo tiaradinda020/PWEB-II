@@ -89,6 +89,7 @@
 <h2>5.TUGAS </h2>
 
 ```bash
+// Implementasi kelas dosen
 class Dosen {
     public $nama;
     public $nip;
@@ -96,6 +97,7 @@ class Dosen {
 ```
 
 ```bash
+    /metode tampilkanData
     public function tampilkanDosen() {
         echo "Nama Dosen: " . $this->nama . "<br>";
         echo "NIP: " . $this->nip . "<br>";
@@ -104,9 +106,11 @@ class Dosen {
 ```
 
 ```bash
+    // Membuat objek dari kelas dosen
     $dosen1 = new Dosen("Bapak Prih Dianto Abda'u", "12345678", "Pemrograman WEB");
     $dosen1->tampilkanDosen();
 ```
 
 ## OUTPUT TUGAS
 
+![tugas](https://github.com/user-attachments/assets/6f25e57c-2d79-4c2b-a7ff-981a3283d1f4)
