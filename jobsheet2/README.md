@@ -20,6 +20,8 @@
   ```
 ## OUTPUT Membuat Class dan Object
 
+![class](https://github.com/user-attachments/assets/ad3a64af-471e-4b1a-8570-d41e8cb1ad92)
+
 
 <h2>2. Implementasi Constructor</h2>
 
@@ -32,6 +34,11 @@
           $this->jurusan = $jurusan;
       }
   ```
+
+  ## OUTPUT Implementasi Constructor
+
+  ![constructor](https://github.com/user-attachments/assets/a5d04c33-ef46-485c-bfb0-f0c50d4b8664)
+
 <h2>3. Membuat Metode Tambahan</h2>
 
 - Deklarasi metode bernama updateJurusan yang menerima satu parameter ($newJurusan). $this->jurusan = $newJurusan;, metode ini mengubah nilai properti jurusan pada objek yang bersangkutan menjadi nilai baru yang diberikan ($newJurusan).
@@ -52,3 +59,29 @@
   echo $mahasiswa1->tampilkanData();
   ?>
   ``` 
+## OUTPUT Membuat Metode Tambahan
+
+![tambahan](https://github.com/user-attachments/assets/42ffaf7c-9614-4f28-b22b-7082117eb51a)
+
+
+<h2>4. Penggunaan Atribut dan Metode</h2>
+
+-  Deklarasi metode bernama setNim yang menerima satu parameter, yaitu $newNim. $this->nim adalah properti dari objek yang mewakili NIM mahasiswa. untuk mengubah nilai properti nim pada objek tersebut menjadi nilai baru yang diberikan 
+
+  ```bash
+      public function setNim($newNim) {
+          $this->nim = $newNim;
+      }
+  ```
+- Metode ini mengubah nilai properti nim pada objek $mahasiswa1 dari "230102045" menjadi "230202045".
+
+    ```bash
+      $mahasiswa1 = new Mahasiswa("Tiara Dinda A", "230102045", "Komputer dan Bisnis");
+      echo $mahasiswa1->tampilkanData() . "<br>";
+      $mahasiswa1->setNim("230202045");
+      echo $mahasiswa1->tampilkanData();
+      ?>
+    ```
+
+## OUTPUT Penggunaan Atribut dan Metode
+![atribut](https://github.com/user-attachments/assets/c6097fa6-1b96-4f14-9f4b-611237c10ead)
