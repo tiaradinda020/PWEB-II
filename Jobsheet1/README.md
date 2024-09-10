@@ -3,7 +3,7 @@
 Object-Oriented Programming (OOP) adalah pemrograman yang
 berfokus pada konsep objek.
 
-### Kelas (Class)
+ ### Kelas (Class)
 
 Class adalah template untuk  menyimpan objek
 Object: Instance dari class yang memiliki atribut (properties) dan perilaku
@@ -79,14 +79,14 @@ Data diakses menggunakan metode getter dan ditampilkan menggunakan echo.
 
 <h2> KONSEP PHP OOP</h2>
 
-## Encapsulation
+- ## Encapsulation
 Menyembunyikan detail implementasi dan hanya memberikan
 akses melalui metode tertentu.
 
-  ## Inheritance
+ - ## Inheritance
 Kelas dapat mewarisi properti dan metode dari kelas lain.
   
-## Polymorphism
+- ## Polymorphism
 Metode yang sama dapat memiliki implementasi berbeda
     dalam class yang berbeda.
     
@@ -95,9 +95,9 @@ Metode yang sama dapat memiliki implementasi berbeda
             return "Mahasiswa $this->nama dapat mengakses fitur absen dan tugas";
         }
     ```
-    Metode ini merupakan kelas turunan dari kelas Pengguna, dan mereka mengimplementasikan ulang metode dengan fungsi yang berbeda.
+Metode ini merupakan kelas turunan dari kelas Pengguna, dan mereka mengimplementasikan ulang metode dengan fungsi yang berbeda.
 
-## Abstraction
+- ## Abstraction
 Menyembunyikan detail implementasi dan hanya menampilkan
     fungsi penting.
     
