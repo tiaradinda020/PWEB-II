@@ -85,3 +85,28 @@
 
 ## OUTPUT Penggunaan Atribut dan Metode
 ![atribut](https://github.com/user-attachments/assets/c6097fa6-1b96-4f14-9f4b-611237c10ead)
+
+<h2>5.TUGAS </h2>
+
+```bash
+class Dosen {
+    public $nama;
+    public $nip;
+    public $mataKuliah;
+```
+
+```bash
+    public function tampilkanDosen() {
+        echo "Nama Dosen: " . $this->nama . "<br>";
+        echo "NIP: " . $this->nip . "<br>";
+        echo "Mata Kuliah: " . $this->mataKuliah . "<br>";
+    }
+```
+
+```bash
+    $dosen1 = new Dosen("Bapak Prih Dianto Abda'u", "12345678", "Pemrograman WEB");
+    $dosen1->tampilkanDosen();
+```
+
+## OUTPUT TUGAS
+
