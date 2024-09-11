@@ -77,7 +77,7 @@ Data diakses menggunakan metode getter dan ditampilkan menggunakan echo.
   ```
   Dosen mewarisi properti dan metode Pengguna (termasuk properti protected seperti $nama dan metode public seperti getNama().
 
-<h2> KONSEP PHP OOP</h2>
+<h2> PRINSIP-PRINSIP PHP OOP</h2>
 
 - ## Encapsulation
 Menyembunyikan detail implementasi dan hanya memberikan
