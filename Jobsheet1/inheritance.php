@@ -8,6 +8,7 @@ class Pengguna {
         $this->nama = $nama;
     }
 
+    //metode getNama
     public function getNama() {
         return $this->nama;
     }   
@@ -25,13 +26,12 @@ class Dosen Extends Pengguna {
         $this->mataKuliah = $mataKuliah;
     }
 
-    
     public function getMataKuliah() {
         return $this->mataKuliah;
     }
 }
 
-// Instansiasi 
+// Instansiasi dan tampilkan data dosen.
 $dosen = new Dosen("Prih Diantono Abda'u", "Praktikum WEB II");
 echo $dosen->getNama() . "<br>"; //Output: Prih Diantono Abda'u
 echo $dosen->getMataKuliah() . "<br>"; //Output: Praktikum WEB II
