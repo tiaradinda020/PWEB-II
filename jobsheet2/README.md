@@ -132,4 +132,4 @@ class Dosen {
 
 ## OUTPUT TUGAS
 
-![tugas](https://github.com/user-attachments/assets/6f25e57c-2d79-4c2b-a7ff-981a3283d1f4)
+![tugas2](https://github.com/user-attachments/assets/e5531e81-491b-497c-b6e6-a1f100195c63)
