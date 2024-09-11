@@ -137,4 +137,57 @@
 
 <h2> TUGAS </h2>
 
-- 
+- Membuat kelas Person sebagai kelas induk.
+
+  ```bash
+  class Person {
+  ```
+
+- class Dosen dan class Mahasiswa mewarisi (extends) dari kelas Person, sehingga mereka mendapatkan properti dan metode dari kelas Person.
+
+  ```bash
+  class Dosen extends Person {
+  ```
+
+  ```bash
+  class Mahasiswa extends Person {
+  ```
+
+-  Metode getRole() di kelas Person di-override dalam kelas Dosen dan Mahasiswa untuk memberikan hasil yang berbeda sesuai dengan peran masing-masing.
+  
+```bash
+public function getRole() {
+    return "Dosen"; // Implementasi khusus di kelas Dosen
+}
+```
+
+- Atribut nidn di kelas Dosen dan nim di kelas Mahasiswa dideklarasikan sebagai private, sehingga hanya bisa diakses melalui metode getNidn() dan getNim() di masing-masing kelas.
+
+  ```bash
+  private $nidn; // di kelas Dosen
+  private $nim;  // di kelas Mahasiswa
+  ```
+- Kelas Jurnal dideklarasikan sebagai kelas abstrak yang memiliki metode abstrak kelolaPengajuan() dan Kelas JurnalDosen dan JurnalMahasiswa mengimplementasikan metode abstrak kelolaPengajuan() dengan cara yang berbeda, sesuai dengan jenis entitas (Dosen atau Mahasiswa).
+
+```bash
+abstract class Jurnal {
+    protected $judul;
+
+    public function __construct($judul) {
+        $this->judul = $judul;
+    }
+
+    abstract public function kelolaPengajuan();
+}
+```
+
+```bash
+class JurnalDosen extends Jurnal {
+```
+
+```bash
+class JurnalMahasiswa extends Jurnal {
+```
+
+<h2> OUTPUT TUGAS </h2>
+
