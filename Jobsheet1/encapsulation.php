@@ -1,5 +1,4 @@
 <?php 
-// Definisi class
 class Mahasiswa {
     // Atribut dengan akses private
     private $nama;
@@ -23,28 +22,24 @@ class Mahasiswa {
         $this->nama = $nama;
     }
 
-    // Metode getter Nim
     public function getNim() {
         return $this->nim;
     }
 
-    //Metode setter Nim
     public function setNim($nim) {
         $this->nim = $nim;
     }
 
-    //Metode getter Jurusan
     public function getJurusan() {
         return $this->jurusan;
     }
 
-    //Metode setter Jurusan
     public function setJurusan($jurusan) {
         $this->jurusan = $jurusan;
     }
 }
 
-// Instansiasi Objek 
+
 $mahasiswa = new Mahasiswa("Tiara Dinda Arumningtyas", "230102045", "Teknik Informatika");
 
 // Mengakses data dengan metode getter
