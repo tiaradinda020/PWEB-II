@@ -90,16 +90,161 @@ Data diakses menggunakan metode getter dan ditampilkan menggunakan echo.
 
 <h2> PRINSIP-PRINSIP PHP OOP</h2>
 
-- ## Encapsulation
+ ## Encapsulation
+
+ - Menyembunyikan detail implementasi dan hanya memberikan
+akses melalui metode tertentu.
+
+  ```bash
+  <?php 
+// Definisi class
+class Mahasiswa {
+    // Atribut dengan akses private
+    private $nama;
+    private $nim;
+    private $jurusan;
+
+    // Constructor
+    public function __construct($nama, $nim, $jurusan) {
+        $this->nama = $nama;
+        $this->nim = $nim;
+        $this->jurusan = $jurusan;
+    }
+
+    // Metode getter Nama
+    public function getNama() {
+        return $this->nama;
+    }
+
+    //Metode setter Nama
+    public function setNama($nama) {
+        $this->nama = $nama;
+    }
+
+    public function getNim() {
+        return $this->nim;
+    }
+
+    public function setNim($nim) {
+        $this->nim = $nim;
+    }
+
+    public function getJurusan() {
+        return $this->jurusan;
+    }
+
+    public function setJurusan($jurusan) {
+        $this->jurusan = $jurusan;
+    }
+}
+
+// Instansiasi Objek 
+$mahasiswa = new Mahasiswa("Tiara Dinda Arumningtyas", "230102045", "Teknik Informatika");
+
+// Mengakses data dengan metode getter
+echo $mahasiswa->getNama() . "<br>"; // Output: Tiara Dinda Arumningtyas
+echo $mahasiswa->getNim() . "<br>"; // Output: 230102045
+echo $mahasiswa->getJurusan() . "<br>"; // Output: Teknik Informatika
+
+?>
+```
+
 Menyembunyikan detail implementasi dan hanya memberikan
 akses melalui metode tertentu.
 
- - ## Inheritance
-Kelas dapat mewarisi properti dan metode dari kelas lain.
-  
-- ## Polymorphism
-Metode yang sama dapat memiliki implementasi berbeda
+ ## Inheritance
+ 
+- Kelas dapat mewarisi properti dan metode dari kelas lain.
+
+     ```bash
+     <?php
+   class Pengguna {
+       protected $nama; 
+   
+       // Constructor
+       public function __construct($nama) {
+           $this->nama = $nama;
+       }
+   
+       public function getNama() {
+           return $this->nama;
+       }   
+   }
+   
+   // Definisi class Dosen yang mewarisi class Pengguna
+   class Dosen Extends Pengguna {
+       private $mataKuliah;
+   
+       // Constructor
+       public function __construct($nama, $mataKuliah) {
+   
+           // Memanggil constructor parent class Pengguna
+           parent::__construct($nama);
+           $this->mataKuliah = $mataKuliah;
+       }
+   
+       
+       public function getMataKuliah() {
+           return $this->mataKuliah;
+       }
+   }
+   
+   // Instansiasi 
+   $dosen = new Dosen("Prih Diantono Abda'u", "Praktikum WEB II");
+   echo $dosen->getNama() . "<br>"; //Output: Prih Diantono Abda'u
+   echo $dosen->getMataKuliah() . "<br>"; //Output: Praktikum WEB II
+   ?>
+   ```
+ ## Polymorphism
+ 
+- Metode yang sama dapat memiliki implementasi berbeda
     dalam class yang berbeda.
+
+    ```bash
+    <?php
+    //Definisi class pengguna
+    class Pengguna {
+        protected $nama;
+    
+        // Constructor untuk menginisialisasi nama
+        public function __construct($nama) {
+            $this->nama = $nama;
+        }
+    
+        // Metode aksesFitur 
+        public function aksesFitur() {
+            return "Pengguna $this->nama memiliki akses dasar";
+        }
+    }
+    
+    class Mahasiswa extends Pengguna {
+        public function __construct($nama) {
+            parent::__construct($nama);
+        }
+    
+        // Implementasi khusus metode aksesFitur untuk Mahasiswa
+        public function aksesFitur() {
+            return "Mahasiswa $this->nama dapat mengakses fitur absen dan tugas";
+        }
+    }
+    
+    class Dosen extends Pengguna {
+        public function __construct($nama){
+            parent::__construct($nama);
+        }
+    
+        // Implementasi khusus metode aksesFitur untuk Dosen
+        public function aksesFitur() {
+            return "Dosen $this->nama dapat mengakses fitur pengelolaan kelas dan pemberian nilai.";
+        }
+    }
+    
+    $mahasiswa = new Mahasiswa("Tiara Dinda"); // Menampilkan hasil akses fitur Mahasiswa
+    echo $mahasiswa->aksesFitur() . "<br>"; 
+    $dosen = new Dosen("Bapak Prih Diantono Abda'u");
+    echo $dosen->aksesFitur(); // Menampilkan hasil akses fitur Dosen
+    ?>
+    ```
     
     ```bash
     public function aksesFitur() {
@@ -108,23 +253,71 @@ Metode yang sama dapat memiliki implementasi berbeda
     ```
 Metode ini merupakan kelas turunan dari kelas Pengguna, dan mereka mengimplementasikan ulang metode dengan fungsi yang berbeda.
 
-- ## Abstraction
-Menyembunyikan detail implementasi dan hanya menampilkan
+ ## Abstraction
+- Menyembunyikan detail implementasi dan hanya menampilkan
     fungsi penting.
+  
+    ```bash
+    <?php
+    abstract class Pengguna {
+        protected $nama;
     
-    ### Abstract Class Pengguna 
-mendefinisikan kelas abstrak yang tidak dapat diinstansiasi secara langsung.
+        // Constructor pada class abstrak
+        public function __construct($nama) {
+            $this->nama = $nama;
+        }
+    
+        // Metode abstrak yang harus diimplementasikan oleh subclass
+        abstract public function aksesFitur();
+    }
+    
+    // Definisi class Mahasiswa yang mengimplementasikan class Pengguna
+    class Mahasiswa extends Pengguna {
+        public function __construct($nama) {
+            parent::__construct($nama);
+        }
+    
+        // Implementasi metode aksesFitur untuk class Mahasiswa
+        public function aksesFitur() {
+            return "Mahasiswa $this->nama dapat mengakses fitur pendaftaran kelas dan tugas.";
+        }
+    }
+    
+    // class Dosen yang mengimplementasikan class Pengguna
+    class Dosen extends Pengguna {
+        public function __construct($nama) {
+            parent::__construct($nama);
+        }
+    
+        // Implementasi metode aksesFitur untuk class Dosen
+        public function aksesFitur() {
+            return "Dosen $this->nama dapat mengakses fitur manajemen kelas dan penilaian.";
+        }
+    }
+    
+    // Membuat objek dari class Mahasiswa dan Dosen
+    $mahasiswa = new Mahasiswa("Tiara Dinda");
+    $dosen = new Dosen("Bapak Abda'u");
+    
+    echo $mahasiswa->aksesFitur() . "<br>"; 
+    echo $dosen->aksesFitur(); // 
+    ?>
+    ```
+    
+## Abstract Class Pengguna
+
+- mendefinisikan kelas abstrak yang tidak dapat diinstansiasi secara langsung.
     
     ```bash
     abstract class Pengguna {
     protected $nama;
     ```
-Kelas Pengguna adalah kelas abstrak yang tidak dapat diinstansiasi langsung. Kelas ini dirancang untuk menjadi superclass dari kelas lain yang akan mengimplementasikan fungsionalitas lebih lanjut.
+- Kelas Pengguna adalah kelas abstrak yang tidak dapat diinstansiasi langsung. Kelas ini dirancang untuk menjadi superclass dari kelas lain yang akan mengimplementasikan fungsionalitas lebih lanjut.
 
     ```bash
      abstract public function aksesFitur();
     ```
- metode abstrak tanpa implementasi. Kelas yang mewarisi Pengguna harus menyediakan implementasi untuk metode ini.
+ - metode abstrak tanpa implementasi. Kelas yang mewarisi Pengguna harus menyediakan implementasi untuk metode ini.
 
 ## OUTPUT Membuat Object dan Class
 ![object](https://github.com/user-attachments/assets/8b9382e4-8ab9-4d56-acdf-695df321c6cb)
