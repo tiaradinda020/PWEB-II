@@ -34,6 +34,11 @@
           $this->jurusan = $jurusan;
       }
   ```
+- Metode untuk mengatur nilai awal dari atribut saat objek dibuat.
+  
+  ```bash
+  $mahasiswa1 = new Mahasiswa("Tiara Dinda A", "230102045", "Komputer dan Bisnis");
+  ```
 
   ## OUTPUT Implementasi Constructor
 
@@ -41,24 +46,25 @@
 
 <h2>3. Membuat Metode Tambahan</h2>
 
-- Deklarasi metode bernama updateJurusan yang menerima satu parameter ($newJurusan). $this->jurusan = $newJurusan;, metode ini mengubah nilai properti jurusan pada objek yang bersangkutan menjadi nilai baru yang diberikan ($newJurusan).
+- Metode updateJurusan yang menerima satu parameter ($newJurusan). $this->jurusan = $newJurusan;, metode ini mengubah nilai properti jurusan pada objek yang bersangkutan menjadi nilai baru yang diberikan ($newJurusan).
    
-  ```bash
-  // Metode updateJurusan
-      public function updateJurusan($newJurusan) {
-          $this->jurusan = $newJurusan;
-      }
-  ```
+    ```bash
+    // Metode updateJurusan
+        public function updateJurusan($newJurusan) {
+            $this->jurusan = $newJurusan;
+        }
+    ```
 
-- Memanggil metode updateJurusan() pada objek $mahasiswa1 dengan argumen "Teknik Informatika". Metode ini mengubah nilai properti jurusan pada objek $mahasiswa1 dari "Komputer dan Bisnis" menjadi "Teknik Informatika".
+-  Metode ini mengubah nilai properti jurusan pada objek $mahasiswa1 dari "Komputer dan Bisnis" menjadi "Teknik Informatika".
   
-   ```bash
-  $mahasiswa1 = new Mahasiswa("Tiara Dinda A", "230102045", "Komputer dan Bisnis");
-  echo $mahasiswa1->tampilkanData() . "<br>";
-  $mahasiswa1->updateJurusan("Teknik Informatika");
-  echo $mahasiswa1->tampilkanData();
-  ?>
-  ``` 
+     ```bash
+    $mahasiswa1 = new Mahasiswa("Tiara Dinda A", "230102045", "Komputer dan Bisnis");
+    echo $mahasiswa1->tampilkanData() . "<br>";
+    $mahasiswa1->updateJurusan("Teknik Informatika");
+    echo $mahasiswa1->tampilkanData();
+    ?>
+    ```
+     
 ## OUTPUT Membuat Metode Tambahan
 
 ![tambahan](https://github.com/user-attachments/assets/42ffaf7c-9614-4f28-b22b-7082117eb51a)
@@ -66,14 +72,16 @@
 
 <h2>4. Penggunaan Atribut dan Metode</h2>
 
--  Deklarasi metode bernama setNim yang menerima satu parameter, yaitu $newNim. $this->nim adalah properti dari objek yang mewakili NIM mahasiswa. untuk mengubah nilai properti nim pada objek tersebut menjadi nilai baru yang diberikan 
+- Untuk mengubah nilai properti nim pada objek tersebut menjadi nilai baru yang diberikan nim pada objek $mahasiswa1 dari "230102045" menjadi "230202045".
 
   ```bash
       public function setNim($newNim) {
           $this->nim = $newNim;
       }
   ```
-- Metode ini mengubah nilai properti nim pada objek $mahasiswa1 dari "230102045" menjadi "230202045".
+  
+- Tampilkan data mahasiswa yang sudah diperbarui dengan memanggil metode
+tampilkanData().
 
     ```bash
       $mahasiswa1 = new Mahasiswa("Tiara Dinda A", "230102045", "Komputer dan Bisnis");
@@ -89,26 +97,29 @@
 <h2>5.TUGAS </h2>
 
 ```bash
+<?php
 // Implementasi kelas dosen
 class Dosen {
     public $nama;
     public $nip;
     public $mataKuliah;
-```
 
-```bash
-    /metode tampilkanData
-    public function tampilkanDosen() {
-        echo "Nama Dosen: " . $this->nama . "<br>";
-        echo "NIP: " . $this->nip . "<br>";
-        echo "Mata Kuliah: " . $this->mataKuliah . "<br>";
+    public function __construct($nama, $nip, $mataKuliah) {
+        $this->nama = $nama;
+        $this->nip = $nip;
+        $this->mataKuliah = $mataKuliah;
     }
-```
 
-```bash
-    // Membuat objek dari kelas dosen
+    //metode menampilkan informasi dosen
+    public function tampilkanDosen() {
+        return "Nama: $this->nama <br>Nip: $this->nip <br>MataKuliah: $this->mataKuliah.";
+    }
+}
+
+    // Membuat objek dari kelas dosen dan tampil informasi dosen
     $dosen1 = new Dosen("Bapak Prih Dianto Abda'u", "12345678", "Pemrograman WEB");
-    $dosen1->tampilkanDosen();
+    echo $dosen1->tampilkanDosen();
+?>
 ```
 
 ## OUTPUT TUGAS
