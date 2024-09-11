@@ -10,7 +10,7 @@
 
 - [JobSheet 1](https://github.com/tiaradinda020/PWEB-II/tree/main/Jobsheet1)
 - [JobSheet 2](https://github.com/tiaradinda020/PWEB-II/tree/main/jobsheet2)
-- [JobSheet 3](jobsheet_3/README.md)
+- [JobSheet 3](https://github.com/tiaradinda020/PWEB-II/tree/main/jobsheet3)
 
 ## OOP PHP Introduction
 
