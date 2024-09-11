@@ -12,12 +12,20 @@
   ```
 
 - Deklarasi Fungsi: metode ini dapat diakses dari mana saja, baik dari dalam maupun luar kelas tempat metode ini dideklarasikan.
-- return adalah perintah untuk mengembalikan nilai dari metode tersebut. variabel tersebut adalah properti dari objek,  properti dari objek yang diakses melalui $this. 
+- return adalah Return Value adalah sebuah nilai yang dikembalikan oleh fungsi / method, saat fungsi / method tersebut dipanggil.
+  
   ```bash
   public function tampilkanData() {
           return "Mahasiswa ini bernama $this->nama, nim $this->nim, jurusan $this->jurusan.";
       }
   ```
+- Instansiasi objek dari class Mahasiswa dan tampilan data mahasiswa.
+
+    ```bash
+    $mahasiswa = new Mahasiswa("Tiara Dinda Arumningtyas", "230102045", "Komputer dan Bisnis");
+  echo $mahasiswa->tampilkanData();
+    ```
+  
 ## OUTPUT Membuat Class dan Object
 
 ![class](https://github.com/user-attachments/assets/ad3a64af-471e-4b1a-8570-d41e8cb1ad92)
