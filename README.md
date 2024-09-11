@@ -8,7 +8,7 @@
 
 ## Daftar Isi
 
-- [JobSheet 1](jobsheet_1/README.md)
+- [JobSheet 1](https://github.com/tiaradinda020/PWEB-II/tree/main/Jobsheet1)
 - [JobSheet 2](jobsheet_2/README.md)
 - [JobSheet 3](jobsheet_3/README.md)
 
