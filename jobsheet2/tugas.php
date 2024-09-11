@@ -11,15 +11,13 @@ class Dosen {
         $this->mataKuliah = $mataKuliah;
     }
 
-    //metode tampilkanData
+    //metode menampilkan informasi dosen
     public function tampilkanDosen() {
-        echo "Nama Dosen: " . $this->nama . "<br>";
-        echo "NIP: " . $this->nip . "<br>";
-        echo "Mata Kuliah: " . $this->mataKuliah . "<br>";
+        return "Nama: $this->nama <br>Nip: $this->nip <br>MataKuliah: $this->mataKuliah.";
     }
 }
 
-    // Membuat objek dari kelas dosen
+    // Membuat objek dari kelas dosen dan tampil informasi dosen
     $dosen1 = new Dosen("Bapak Prih Dianto Abda'u", "12345678", "Pemrograman WEB");
-    $dosen1->tampilkanDosen();
+    echo $dosen1->tampilkanDosen();
 ?>
