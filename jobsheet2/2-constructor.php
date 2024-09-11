@@ -16,6 +16,7 @@ class Mahasiswa {
     }
 }
 
+// Pengaturan Nilai Awal dari Atribut
 $mahasiswa1 = new Mahasiswa("Tiara Dinda A", "230102045", "Komputer dan Bisnis");
 echo $mahasiswa1->tampilkanData();
 ?>
