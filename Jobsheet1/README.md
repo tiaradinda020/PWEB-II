@@ -3,6 +3,8 @@
 Object-Oriented Programming (OOP) adalah pemrograman yang
 berfokus pada konsep objek.
 
+<h2> Konsep PHP OOP </h2>
+
  ### Kelas (Class)
 
 Class adalah template untuk  menyimpan objek
@@ -11,6 +13,15 @@ Object: Instance dari class yang memiliki atribut (properties) dan perilaku
 ```bash
 class Mahasiswa {
 ```
+
+### Object (Objek)
+
+Objek adalah instance dari kelas. Setelah sebuah kelas didefinisikan, kita bisa membuat objek dari kelas tersebut dengan menggunakan kata kunci new.
+
+```bash
+$mahasiswa = new Mahasiswa("Tiara Dinda");
+```
+
 ### Private
 
 ```bash
