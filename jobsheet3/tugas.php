@@ -1,106 +1,135 @@
 <?php
 class Person {
-    protected $name;
+    protected $nama;
     protected $umur;
 
-    public function __construct($name, $umur) {
-        $this->name = $name;
-        $this->umur = $umur;
-    }
-
-    public function getName() {
-        return $this->name;
-    }
-
-    public function getUmur() {
-        return $this->umur;
+    public function tampilkanData() {
+        return $this->nama;
     }
 
     public function getRole() {
         return "Person";
+    }
+
+    public function setNama($nama) {
+        $this->nama = $nama;
+    }
+
+    public function setUmur($umur) {
+        $this->umur = $umur;
     }
 }
 
 class Dosen extends Person {
     private $nidn;
 
-    public function __construct($name, $umur, $nidn) {
-        parent::__construct($name, $umur);
+    public function tampilkanData() {
+        return "Nama: $this->nama, Umur: $this->umur, NIDN: $this->nidn";
+    }
+
+    public function getRole() {
+        return "Dosen";
+    }
+
+    public function setNidn($nidn) {
         $this->nidn = $nidn;
     }
 
     public function getNidn() {
         return $this->nidn;
     }
-
-    public function getRole() {
-        return "Dosen";
-    }
 }
 
 class Mahasiswa extends Person {
     private $nim;
 
-    public function __construct($name, $umur, $nim) {
-        parent::__construct($name, $umur);
+    public function tampilkanData() {
+        return "Nama: $this->nama, Umur: $this->umur, NIM: $this->nim";
+    }
+
+    public function getRole() {
+        return "Mahasiswa";
+    }
+
+    public function setNim($nim) {
         $this->nim = $nim;
     }
 
     public function getNim() {
         return $this->nim;
     }
-
-    public function getRole() {
-        return "Mahasiswa";
-    }
 }
 
 abstract class Jurnal {
     protected $judul;
+    protected $penulis;
 
-    public function __construct($judul) {
+    public function setJudul($judul) {
         $this->judul = $judul;
     }
 
+    public function setPenulis($penulis) {
+        $this->penulis = $penulis;
+    }
+
     abstract public function kelolaPengajuan();
+
+    public function getJudul() {
+        return $this->judul;
+    }
+
+    public function getPenulis() {
+        return $this->penulis;
+    }
 }
 
 class JurnalDosen extends Jurnal {
     private $nidn;
 
-    public function __construct($judul, $nidn) {
-        parent::__construct($judul);
-        $this->nidn = $nidn;
+    public function kelolaPengajuan() {
+        return "Judul: '$this->judul', NIDN: $this->nidn.<br>";
     }
 
-    public function kelolaPengajuan() {
-        echo "Jurnal dengan judul '$this->judul' oleh Dosen NIDN $this->nidn telah diajukan.\n";
+    public function setNidn($nidn) {
+        $this->nidn = $nidn;
     }
 }
 
 class JurnalMahasiswa extends Jurnal {
     private $nim;
 
-    public function __construct($judul, $nim) {
-        parent::__construct($judul);
-        $this->nim = $nim;
+    public function kelolaPengajuan() {
+        return "Judul: {$this->getJudul()} <br> Nama: {$this->getPenulis()} <br> NIM: {$this->nim}<br>";
     }
 
-    public function kelolaPengajuan() {
-        echo "Jurnal dengan judul '$this->judul' oleh Mahasiswa NIM $this->nim telah diajukan.\n";
+    public function setNim($nim) {
+        $this->nim = $nim;
     }
 }
 
-$dosen = new Dosen("Pak Abda'u", 35, "123456");
-$mahasiswa = new Mahasiswa("Tiara", 18, "230102045");
+$dosen = new Dosen();
+$dosen->setNama("Pak Abda'u");
+$dosen->setUmur(35);
+$dosen->setNidn("123456");
 
-echo $dosen->getName() . " adalah seorang " . $dosen->getRole() . " dengan NIDN: " . $dosen->getNidn() . "<br>";
-echo $mahasiswa->getName() . " adalah seorang " . $mahasiswa->getRole() . " dengan NIM: " . $mahasiswa->getNim() . "<br>";
+$mahasiswa = new Mahasiswa();
+$mahasiswa->setNama("Tiara");
+$mahasiswa->setUmur(18);
+$mahasiswa->setNim("230102045");
 
-$jurnalDosen = new JurnalDosen("Penelitian AI", $dosen->getNidn());
-$jurnalMahasiswa = new JurnalMahasiswa("Studi Kasus Machine Learning", $mahasiswa->getNim());
+echo $dosen->tampilkanData() . $dosen->getRole() . "NIDN: " . $dosen->getNidn() . "<br>";
+echo $mahasiswa->tampilkanData(). $mahasiswa->getRole() . "NIM: " . $mahasiswa->getNim() . "<br>";
 
-$jurnalDosen->kelolaPengajuan();
-$jurnalMahasiswa->kelolaPengajuan();
+$jurnalDosen = new JurnalDosen();
+$jurnalDosen->setJudul("Praktikum WEB");
+$jurnalDosen->setPenulis($dosen->tampilkanData());
+$jurnalDosen->setNidn($dosen->getNidn());
 
+$jurnalMahasiswa = new JurnalMahasiswa();
+$jurnalMahasiswa->setJudul("PBL");
+$jurnalMahasiswa->setPenulis($mahasiswa->tampilkanData());
+$jurnalMahasiswa->setNim($mahasiswa->getNim());
+
+echo $jurnalDosen->kelolaPengajuan();
+echo $jurnalMahasiswa->kelolaPengajuan();
 ?>
