@@ -292,5 +292,6 @@ class JurnalMahasiswa extends Jurnal {
 
 <h2> OUTPUT TUGAS </h2>
 
-  ![Screenshot 2024-09-12 081759](https://github.com/user-attachments/assets/ac48bb74-8f86-4069-abbb-4c01cbe6dacd)
+  ![tugas3](https://github.com/user-attachments/assets/20480ce4-8e18-4728-890d-1b09e8c22e08)
+
 
