@@ -191,4 +191,4 @@ class JurnalMahasiswa extends Jurnal {
 
 <h2> OUTPUT TUGAS </h2>
 
-![tugas](https://github.com/user-attachments/assets/a7769e81-ab90-4e33-a42c-93f4d2e87555)
+
