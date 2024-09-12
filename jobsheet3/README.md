@@ -137,59 +137,160 @@
 
 <h2> TUGAS </h2>
 
-- Membuat kelas Person sebagai kelas induk.
+- Implementasikan kelas Person sebagai induk dari Dosen dan Mahasiswa.
 
-  ```bash
+    ```bash
+    <?php
   class Person {
-  ```
-
-- class Dosen dan class Mahasiswa mewarisi (extends) dari kelas Person, sehingga mereka mendapatkan properti dan metode dari kelas Person.
-
-  ```bash
-  class Dosen extends Person {
-  ```
-
-  ```bash
-  class Mahasiswa extends Person {
-  ```
-
--  Metode getRole() di kelas Person di-override dalam kelas Dosen dan Mahasiswa untuk memberikan hasil yang berbeda sesuai dengan peran masing-masing.
+      protected $nama;
+      protected $umur;
   
+      public function tampilkanData() {
+          return $this->nama;
+      }
+  
+      public function getRole() {
+          return "Person";
+      }
+  
+      public function setNama($nama) {
+          $this->nama = $nama;
+      }
+  
+      public function setUmur($umur) {
+          $this->umur = $umur;
+      }
+  }
+  ```
+- konsep Inheritance untuk membuat hierarki kelas yang memungkinkan
+Dosen dan Mahasiswa memiliki atribut dan metode yang sesuai dengan perannya.
+
 ```bash
-public function getRole() {
-    return "Dosen"; // Implementasi khusus di kelas Dosen
+class Dosen extends Person {
+    private $nidn;
+
+    public function tampilkanData() {
+        return "Nama: $this->nama, Umur: $this->umur, NIDN: $this->nidn";
+    }
+
+    public function getRole() {
+        return "Dosen";
+    }
+
+    public function setNidn($nidn) {
+        $this->nidn = $nidn;
+    }
+
+    public function getNidn() {
+        return $this->nidn;
+    }
 }
 ```
 
-- Atribut nidn di kelas Dosen dan nim di kelas Mahasiswa dideklarasikan sebagai private, sehingga hanya bisa diakses melalui metode getNidn() dan getNim() di masing-masing kelas.
+```bash
+class Mahasiswa extends Person {
+    private $nim;
 
-  ```bash
-  private $nidn; // di kelas Dosen
-  private $nim;  // di kelas Mahasiswa
-  ```
-- Kelas Jurnal dideklarasikan sebagai kelas abstrak yang memiliki metode abstrak kelolaPengajuan() dan Kelas JurnalDosen dan JurnalMahasiswa mengimplementasikan metode abstrak kelolaPengajuan() dengan cara yang berbeda, sesuai dengan jenis entitas (Dosen atau Mahasiswa).
+    public function tampilkanData() {
+        return "Nama: $this->nama, Umur: $this->umur, NIM: $this->nim";
+    }
+
+    public function getRole() {
+        return "Mahasiswa";
+    }
+
+    public function setNim($nim) {
+        $this->nim = $nim;
+    }
+
+    public function getNim() {
+        return $this->nim;
+    }
+}
+```
+
+- Polymorphism dengan membuat metode getRole() di kelas Person dan
+override metode ini di kelas Dosen dan Mahasiswa untuk menampilkan peran yang berbeda.
 
 ```bash
+public function getRole() {
+        return "Dosen";
+    }
+```
+
+```bash
+public function getRole() {
+        return "Mahasiswa";
+    }
+```
+
+- Encapsulation untuk melindungi atribut nidn di kelas Dosen dan nim di
+kelas Mahasiswa.
+
+```bash
+private $nidn; // encapsulation dosen
+private $nim; // encapsulation mahasiswa
+```
+
+- kelas abstrak Jurnal dan implementasikan konsep Abstraction dengan
+membuat kelas turunan JurnalDosen dan JurnalMahasiswa yang masing-masing
+memiliki cara tersendiri untuk mengelola pengajuan jurnal.
+
+```
 abstract class Jurnal {
     protected $judul;
+    protected $penulis;
 
-    public function __construct($judul) {
+    public function setJudul($judul) {
         $this->judul = $judul;
     }
 
+    public function setPenulis($penulis) {
+        $this->penulis = $penulis;
+    }
+
     abstract public function kelolaPengajuan();
+
+    public function getJudul() {
+        return $this->judul;
+    }
+
+    public function getPenulis() {
+        return $this->penulis;
+    }
 }
 ```
 
+
 ```bash
 class JurnalDosen extends Jurnal {
+    private $nidn;
+
+    public function kelolaPengajuan() {
+        return "Judul: '$this->judul', NIDN: $this->nidn.<br>";
+    }
+
+    public function setNidn($nidn) {
+        $this->nidn = $nidn;
+    }
+}
 ```
 
 ```bash
 class JurnalMahasiswa extends Jurnal {
+    private $nim;
+
+    public function kelolaPengajuan() {
+        return "Judul: {$this->getJudul()} <br> Nama: {$this->getPenulis()} <br> NIM: {$this->nim}<br>";
+    }
+
+    public function setNim($nim) {
+        $this->nim = $nim;
+    }
+}
 ```
 
 <h2> OUTPUT TUGAS </h2>
 
-![Screenshot 2024-09-12 081759](https://github.com/user-attachments/assets/ac48bb74-8f86-4069-abbb-4c01cbe6dacd)
+  ![Screenshot 2024-09-12 081759](https://github.com/user-attachments/assets/ac48bb74-8f86-4069-abbb-4c01cbe6dacd)
 
